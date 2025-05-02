@@ -1,0 +1,55 @@
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: auto; 
+  overflow: hidden;
+}
+
+.herobg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 1;
+}
+
+.herosec {
+  position: absolute;
+  /* top: 38%;
+  left: 28%; */
+  top: 25%;
+  left: 5%;
+  /* transform: translate(-50%, -50%); */
+  z-index: 2; 
+  color: white;
+  text-align: left;
+  padding: 20px;
+}
+
+.per{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.lookingtxt{
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 65px;
+}
+
+.fa-check{
+  font-weight: 200;
+  background-color: #1add65;
+  border-radius: 100px;
+  padding: 4px;
+  margin-right: 5px;
+}

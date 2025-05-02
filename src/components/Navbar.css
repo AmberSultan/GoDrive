@@ -1,0 +1,89 @@
+.custom-navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 15px 20px;
+  z-index: 2;
+}
+
+.greencolor {
+  color: #1add65;
+}
+
+.hr {
+  color: antiquewhite;
+  width: 100%;
+}
+
+.logo {
+  font-weight: 750;
+  font-size: 25px;
+}
+
+.wheelcss {
+  width: 30px;
+  margin-right: 10px;
+}
+
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: relative; */
+  position: sticky;
+}
+
+/* NEW: Position hamburger absolutely */
+.hamburger {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #222222;
+  color: rgb(219, 217, 217);
+  border: none;
+  padding: 4px 12px;
+  /* border-radius: 5px; */
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  /* top: -70px; 
+  right: -20px; */
+  top: -10px;
+  right: 0px;
+  background: #222222;
+  /* border-radius: 5px; */
+  padding: 10px 20px;
+  z-index: 4;
+  align-items: start;
+
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+.navli{
+  text-decoration: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 90px;
+}
+.navlink{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  &:hover{
+    color: #5ee090;
+  }
+}
