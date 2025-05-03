@@ -7,7 +7,7 @@
 }
 
 .greencolor {
-  color: #1add65;
+  color: #FFD700;
 }
 
 .hr {
@@ -21,7 +21,7 @@
 }
 
 .wheelcss {
-  width: 30px;
+  width: 55px;
   margin-right: 10px;
 }
 
@@ -30,8 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* position: relative; */
-  position: sticky;
+  position: relative;
 }
 
 /* NEW: Position hamburger absolutely */
@@ -84,6 +83,6 @@
   font-size: 18px;
   font-weight: 600;
   &:hover{
-    color: #5ee090;
+    color: #FFD700;;
   }
 }
