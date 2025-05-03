@@ -9,6 +9,7 @@ import "react-calendar/dist/Calendar.css";
 
 
 import PremiumBrands from "../components/PremiumBrands";
+import Homepage3 from "../components/Homepage3";
 
 function HomePage() {
   useEffect(() => {
@@ -235,6 +236,7 @@ function HomePage() {
         </div>
       </div>
 <PremiumBrands/>
+<Homepage3/>
 
       
     </>
