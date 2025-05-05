@@ -97,20 +97,20 @@
   @media (max-width: 768px) {
     .footer-container {
       flex-direction: column;
-      align-items: center;
+      align-items: left;
     }
   
     .footer-section {
-      text-align: center;
+      text-align: left;
       margin: 15px 0;
     }
   
     .company-info {
-      text-align: center;
+      text-align: left;
     }
   
     .footer-bottom {
-      text-align: center;
+      text-align: left;
     }
   }
   
