@@ -212,6 +212,32 @@
     height: 60px;
     color: #111;
   }
+
+  .marginsub{
+    padding-top: 9%;
+  }
+
+  .sub{
+    font-size: 23px;
+    font-weight: 600;
+  }
+
+  .subinput{
+    border: 1px solid rgb(190, 190, 190);
+    background-color: #222;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: #d4d4d4;
+    width: 80%;
+  }
+  .subbtn{
+    border: none;
+    background-color: #fada25;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: #000000;
+margin-left: 10px;
+  }
   
   /* ✅ Mobile styles for screens 768px to 430px */
   @media screen and (max-width: 768px) and (min-width: 430px) {
@@ -287,4 +313,7 @@
        display: none;
       }
   }
+
+
+  
   

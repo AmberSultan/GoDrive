@@ -139,6 +139,26 @@ function HomePage4() {
           </div>
         </div>
       </div>
+
+
+      <div className="container subscribe">
+          <div className="row marginsub">
+            <div className="col-md-6">
+                <p className="sub text-start">Subscribe now to unlock secret deals, prices drop instantly when you join the list!</p>
+            </div>
+
+            <div className="col-md-6 mt-3">
+                <div className="d-flex ">
+                    <input className='subinput' placeholder='Enter your email' type="text" />
+                    <button className='subbtn'>Subscribe</button>
+                </div>
+            </div>
+          </div>
+
+          <hr/>
+      </div>
+
+   
     </>
   );
 }
