@@ -1,51 +1,79 @@
-.bg{
-    background-color: #313131;
-height: 70vh;
+.bg {
+  background-color: #313131;
+  height: 70vh;
 }
-.premium{
-    padding-top: 15%;
-    font-size: 2.7rem;
-    font-weight: 640;
-    color: rgb(239, 243, 243);
+
+.premium {
+  padding-top: 15%;
+  font-size: 2.7rem;
+  font-weight: 640;
+  color: rgb(239, 243, 243);
 }
-.unveil{
-    color: #868686;
-    font-size: 17px;
+
+.unveil {
+  color: #868686;
+  font-size: 17px;
 }
 
 .marquee {
-    overflow: hidden;
-    width: 100%;
-    white-space: nowrap;
-  }
-  
-  .marquee-content {
-    display: flex;
-    animation: marquee 20s linear infinite; /* Adjust speed by changing 20s */
-  }
-  
-  .logo1 {
-    margin-top: 3% !important;
-    margin: 0 20px; /* Space between logos */
-    flex-shrink: 0;
-padding: 10px;
-    background-color: rgb(0, 0, 0);
-    height: 70px !important;
-    border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
 
-  }
+.marquee-content {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
 
-  /* Animation for marquee effect */
-  @keyframes marquee {
-    0% {
+.logo1 {
+  margin-top: 3% !important;
+  margin: 0 20px;
+  flex-shrink: 0;
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  height: 70px !important;
+  border-radius: 6px;
+}
+
+@keyframes marquee {
+  0% {
       transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%); /* Moves half the content width for seamless loop */
-    }
   }
-  
-  /* Pause animation on hover (optional) */
-  .marquee:hover .marquee-content {
-    animation-play-state: paused;
+  100% {
+      transform: translateX(-50%);
   }
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments for screens 720px and smaller */
+@media screen and (max-width: 720px) {
+  .bg {
+      height: auto;
+      padding: 40px 15px;
+  }
+
+  .premium {
+      padding-top: 10%;
+      font-size: 1.8rem;
+      text-align: center;
+  }
+
+  .unveil {
+      font-size: 15px;
+      text-align: center;
+  }
+
+  .logo1 {
+      height: 50px !important;
+      padding: 8px;
+      margin: 0 10px;
+  }
+
+  .marquee-content {
+      animation-duration: 15s; /* Slightly faster on small screens */
+  }
+}

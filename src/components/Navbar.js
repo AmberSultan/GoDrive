@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <div className='custom-navbar'>
       {/* Top contact row */}
-      <div className="row">
+      <div className="row none">
         <div className="col-md-4 small text-white text-start">
           <i className="fa fa-phone"></i> +92-345-6789234
         </div>
@@ -24,7 +24,7 @@ function Navbar() {
         </div>
       </div>
 
-      <hr className='hr' />
+      <hr className='hr none' />
 
       {/* Navbar */}
       <nav className="navbar-container">
@@ -49,7 +49,7 @@ function Navbar() {
         </ul>
       </nav>
 
-      <hr className='hr' />
+      <hr className='hr margin' />
     </div>
   );
 }

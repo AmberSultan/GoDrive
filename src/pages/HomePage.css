@@ -1,3 +1,4 @@
+
 /* Hero Section */
 .hero-container {
   position: relative;
@@ -82,6 +83,10 @@
 .fa-user {
   color: white;
   margin-right: 5px;
+}
+
+.margin5{
+  margin-top: 9% !important;
 }
 
 .help {
@@ -267,4 +272,155 @@
 .custom-dropdown,
 .calendar-wrapper {
   z-index: 1000;
+}
+
+/* Media Queries for Screens 768px and Smaller */
+@media (max-width: 768px) {
+  /* Hero Section Adjustments */
+  .hero-container {
+    min-height: 300px; /* Reduced height for small screens */
+  }
+
+  .herosec {
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 90%;
+    top: 20%; /* Adjusted for better placement */
+  }
+
+  .lookingtxt {
+    font-size: 30px; /* Smaller text for readability */
+    line-height: 35px;
+  }
+
+  .per {
+    font-size: 14px;
+  }
+
+  /* Form Section Adjustments */
+  .halfhalf {
+    position: relative;
+    top: auto; /* Remove absolute positioning */
+    left: auto;
+    margin-top: 20px; /* Ensure it flows naturally */
+    padding: 20px !important;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .borderhalf {
+    padding: 15px 0;
+  }
+
+  .borderin {
+    border-right: none !important; /* Stack columns */
+    padding-left: 15px !important;
+    margin-bottom: 20px;
+  }
+
+  .borderin1 {
+    padding-left: 15px !important;
+    margin-bottom: 20px;
+  }
+
+  .inputcolor {
+    width: 100% !important; /* Full-width inputs */
+  }
+
+  .allcars {
+    width: 30%; /* Wider button for visibility */
+    font-size: 14px;
+  }
+
+  /* Calendar Adjustments */
+  .react-calendar {
+    width: 100% !important;
+    max-width: 300px; /* Prevent overflow */
+  }
+
+  /* Adjust Dropdowns */
+  .dropdown-list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  /* Hero Section Adjustments */
+  .hero-container {
+    min-height: 270px; /* Reduced height for small screens */
+  }
+
+  .herosec {
+    text-align: left;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    top: 34%;
+  }
+
+  .lookingtxt {
+    font-size: 30px; /* Smaller text for readability */
+    line-height: 35px;
+  }
+
+  .per {
+    font-size: 12px;
+  }
+
+  .margin5{
+    /* margin-top: 2% !important; */
+    display: none !important;
+  }
+
+  /* Form Section Adjustments */
+  .halfhalf {
+    position: relative;
+    top: auto; /* Remove absolute positioning */
+    left: auto;
+    margin-top: 20px; /* Ensure it flows naturally */
+    padding: 20px !important;
+    width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px !important;
+  }
+
+  .borderhalf {
+    padding: 15px 0;
+  }
+
+  .borderin {
+    border-right: none !important; /* Stack columns */
+    padding-left: 15px !important;
+    margin-bottom: 20px;
+  }
+
+  .borderin1 {
+    padding-left: 15px !important;
+    margin-bottom: 20px;
+  }
+
+  .inputcolor {
+    width: 100% !important; /* Full-width inputs */
+  }
+
+  .allcars {
+    width: 30%; /* Wider button for visibility */
+    font-size: 14px;
+  }
+
+  /* Calendar Adjustments */
+  .react-calendar {
+    width: 100% !important;
+    max-width: 300px; /* Prevent overflow */
+  }
+
+  /* Adjust Dropdowns */
+  .dropdown-list {
+    width: 100%;
+  }
 }

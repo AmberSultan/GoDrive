@@ -1,4 +1,4 @@
-.carrental{
+.carrental {
     background-color: rgb(214, 214, 213);
     color: black;
     padding: 10px 2px;
@@ -6,12 +6,52 @@
     font-weight: 600;
     border-radius: 8px;
 }
-.rowsell{
-    padding: 60px 0px;
+
+.rowsell {
+    padding: 30px 0px;
 }
 
-.recieve{
+.recieve {
     margin-top: 8%;
     font-weight: 680;
-    font-size: 35px ;
+    font-size: 35px;
+}
+
+.imgesfluid {
+    height: 100%!important;
+    width: 100%;
+    object-fit: cover; /* Keeps image nicely cropped without distortion */
+    border-radius: 8px;
+}
+
+
+.magintop {
+    margin-top: 90px !important;
+}
+
+/* Responsive adjustments for screens 720px and smaller */
+@media screen and (max-width: 720px) {
+    .carrental {
+        width: 90%;
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .recieve {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .rowsell {
+        padding: 20px 10px;
+    }
+
+    .imgesfluid {
+        height: auto !important;
+        width: 100%;
+    }
+
+    .magintop {
+        margin-top: 50px !important;
+    }
 }

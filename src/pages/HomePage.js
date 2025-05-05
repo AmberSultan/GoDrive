@@ -10,6 +10,7 @@ import "react-calendar/dist/Calendar.css";
 
 import PremiumBrands from "../components/PremiumBrands";
 import Homepage3 from "../components/Homepage3";
+import HomePage4 from "../components/HomePage4";
 
 function HomePage() {
   useEffect(() => {
@@ -86,7 +87,7 @@ function HomePage() {
             Looking for a vehicle? <br />
             You're in the perfect spot.
           </p>
-          <div className="row mt-5">
+          <div className="row margin5">
             <div className="col-md-4 small">
               <i className="fa fa-check"></i> Premium yet affordable.
             </div>
@@ -237,6 +238,7 @@ function HomePage() {
       </div>
 <PremiumBrands/>
 <Homepage3/>
+<HomePage4/>
 
       
     </>
