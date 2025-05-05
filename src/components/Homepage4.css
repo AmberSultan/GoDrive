@@ -49,14 +49,179 @@
     color: #808080;
   }
   
-  /* ✅ Mobile styles for screens 720px and smaller */
-  @media screen and (max-width: 720px) {
+  .highlights-container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  .custom-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .highlight-item {
+    text-align: center;
+  }
+  
+  .containercss {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .rent-calculator-container {
+    background-color: #181818;
+    color: #fff;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+  
+  .rent-heading {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  .rent-subheading {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #ccc;
+  }
+  
+  .rent-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .rent-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .rent-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #444;
+    background-color: #222;
+    color: white;
+    border-radius: 6px;
+  }
+  
+  .rent-button {
+    background-color: #FFD700;
+    color: rgb(0, 0, 0);
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rent-button:hover {
+    background-color: #fada25;
+  }
+  
+  .bottom {
+    margin-top: 10%;
+  }
+  
+  .highlights-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 0;
+  }
+  
+  .highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .highlight-item h2 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  .highlight-item p {
+    font-size: 1em;
+    margin: 5px 0 0;
+  }
+  
+  .user-stats {
+    /* display: flex; */
+    align-items: center;
+    background-color: #111;
+    padding: 15px 5px;
+    border: 1px solid rgb(83, 83, 83);
+    border-radius: 12px;
+  }
+  
+  .people {
+    font-weight: 600;
+    color: #aaa;
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  
+  .user-stats img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: -20px;
+    border: 2px solid white;
+  }
+  
+  .user-stats .plus-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-right: -20px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: #111;
+  }
+  
+  /* ✅ Mobile styles for screens 768px to 430px */
+  @media screen and (max-width: 768px) and (min-width: 430px) {
     .how-it-works {
       padding: 40px 15px;
     }
+
   
     .title {
-      font-size: 1.8rem;
+      font-size: 2rem;
       max-width: 100%;
     }
   
@@ -81,5 +246,45 @@
     .step p {
       font-size: 14px;
     }
+  
+    .highlights-container {
+      flex-direction: column;
+      padding: 15px 0;
+      gap: 20px;
+    }
+  
+    .highlight-item h2 {
+      font-size: 1.8em;
+    }
+  
+    .highlight-item p {
+      font-size: 0.9em;
+    }
+  
+    .rent-calculator-container {
+      padding: 1.5rem;
+      max-width: 90%;
+    }
+  
+    .rent-heading {
+      font-size: 1.8rem;
+    }
+  
+    .rent-subheading {
+      font-size: 1rem;
+    }
+  
+    .rent-button {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+  
+    .bottom {
+      margin-top: 5%;
+    }
+
+    .user-stats .plus-icon {
+       display: none;
+      }
   }
   

@@ -36,6 +36,8 @@ function HomePage4() {
   ];
 
   return (
+
+    <>
     <section className="how-it-works" data-aos="fade-up">
       <p className="subtitle" data-aos="fade-up">HOW IT WORKS</p>
       <h2 className="title" data-aos="fade-up" data-aos-delay="100">Presenting Your New Go-To Car Rental Experience</h2>
@@ -57,6 +59,90 @@ function HomePage4() {
         ))}
       </div>
     </section>
+
+
+
+    <div className="highlights-container">
+      <img src='/carbg.jpg' alt="Background" className="background-image" />
+    
+      <div className="container mt-5 ">
+        <div className="top containercss">
+            <div className="row">
+                <div className="col-md-6 text-start need">
+                    <h1>Need to Estimate <br/> Your Car Rental Price?</h1>
+                    <p>Quickly calculate the total cost based on car type, duration, and location.</p>
+                </div>
+                <div className="col-md-6">
+                <div className="rent-calculator-container">
+  <h1 className="rent-heading text-start">Rent Calculator</h1>
+  <p className="rent-subheading text-start">Get an instant price estimate for your rental car</p>
+
+  <form id="rentalForm" className="rent-form">
+    <div className="rent-form-group text-start">
+      <label htmlFor="carType ">Car Type</label>
+      <select id="carType" className="rent-input" required>
+        <option selected disabled>Choose a car</option>
+        <option value="economy">Economy</option>
+        <option value="standard">Standard</option>
+        <option value="suv">SUV</option>
+        <option value="luxury">Luxury</option>
+      </select>
+    </div>
+
+    <div className="rent-form-group text-start">
+      <label htmlFor="rentalDays">Rental Duration (Days)</label>
+      <input type="number" className="rent-input" id="rentalDays" min={1} required />
+    </div>
+
+    <div className="rent-form-group text-start">
+      <label htmlFor="pickupLocation">Pickup Location</label>
+      <input type="text" className="rent-input" id="pickupLocation" placeholder="City or Zip" required />
+    </div>
+
+    <div className="rent-form-group">
+      <button type="submit" className="rent-button">Estimate Price</button>
+    </div>
+  </form>
+</div>
+
+                </div>
+            </div> 
+        </div>
+
+        <div className="containercss bottom">
+  <div className="row text-center ">
+    <div className="col-12 col-md-8 custom-flex">
+      <div className="highlight-item">
+        <h2>45+</h2>
+        <p>Global Branches</p>
+      </div>
+      <div className="highlight-item">
+        <h2>29K</h2>
+        <p>Destinations Collaboration</p>
+      </div>
+      <div className="highlight-item">
+        <h2>168K</h2>
+        <p>Happy Customers</p>
+      </div>
+    </div>
+    <div className="col-12 col-md-4">
+      <div className="user-stats ">
+        <img src="https://media.istockphoto.com/id/1333647263/photo/cheerful-african-teenage-girl-coming-in-her-house.jpg?s=612x612&w=0&k=20&c=UWZ5lRAkHa5ZxZgN5qOAytddmjR-wj_I44P1pXt2RFM="  alt="User 1" />
+        <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"  alt="User 2" />
+        <img src="https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg"  alt="User 3" />
+        <img src="https://cdn.create.vista.com/api/media/medium/471007144/stock-vector-add-button-symbol-black-circle-yellow-glowing-neon-icon?token="  alt="User 3" />
+        {/* <span className="plus-icon">+</span> */}
+        <p className="people">1684 people used GoDrive <br />  in the last 24 hours</p>
+      </div>
+</div>
+  </div>
+
+
+
+      </div>
+    </div>
+    </div>
+    </>
   );
 }
 
