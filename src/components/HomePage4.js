@@ -37,29 +37,31 @@ function HomePage4() {
 
   return (
     <>
-      <section className="how-it-works" data-aos="fade-up">
-        <p className="subtitle" data-aos="fade-up">HOW IT WORKS</p>
-        <h2 className="title" data-aos="fade-up" data-aos-delay="100">
-          Presenting Your New Go-To Car Rental Experience
-        </h2>
-
-        <div className="steps-container">
-          {steps.map((step, index) => (
-            <div
-              className="step"
-              key={index}
-              data-aos="zoom-in"
-              data-aos-delay={index * 200} // stagger effect
-            >
-              <div className="icon">
-                <FontAwesomeIcon icon={step.icon} size="1x" />
-              </div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
-          ))}
+     <section className="how-it-works" data-aos="fade-up">
+  <p className="subtitle text-center" data-aos="fade-up">HOW IT WORKS</p>
+  <h2 className="title text-center" data-aos="fade-up" data-aos-delay="100">
+    Presenting Your New Go-To Car Rental Experience
+  </h2>
+<div className="container">
+  <div className="row mt-5">
+    {steps.map((step, index) => (
+      <div
+        className="step col-6 col-md-3 d-flex flex-column  mb-4"
+        key={index}
+        data-aos="zoom-in"
+        data-aos-delay={index * 200}
+      >
+        <div className="icon mb-3">
+          <FontAwesomeIcon icon={step.icon} />
         </div>
-      </section>
+        <h3 >{step.title}</h3>
+        <p className='text-start'>{step.description}</p>
+      </div>
+    ))}
+  </div>
+  </div>
+</section>
+
 
       {/* Highlight Section */}
       <div className="highlights-container" data-aos="fade-up">

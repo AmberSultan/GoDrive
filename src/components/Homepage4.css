@@ -25,7 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
   }
   
   .step {
@@ -240,14 +240,14 @@ margin-left: 10px;
   }
   
   /* ✅ Mobile styles for screens 768px to 430px */
-  @media screen and (max-width: 768px) and (min-width: 430px) {
+  @media screen and (max-width: 768px){
     .how-it-works {
       padding: 40px 15px;
     }
 
   
     .title {
-      font-size: 2rem;
+      font-size: 18px;
       max-width: 100%;
     }
   
@@ -312,6 +312,24 @@ margin-left: 10px;
     .user-stats .plus-icon {
        display: none;
       }
+  }
+
+  @media (max-width: 430px){
+    .title {
+      font-size: 18px;
+      max-width: 60%;
+    }
+    .icon {
+      font-size: 26px;
+    }
+  
+    .step h3 {
+      font-size: 13px;
+    }
+  
+    .step p {
+      font-size: 12px;
+    }
   }
 
 

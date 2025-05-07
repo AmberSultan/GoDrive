@@ -110,12 +110,12 @@
   max-width: 100%;
 }
 
-.steps-container1 {
+/* .steps-container1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 40px;
-}
+} */
 
 .step1 p{
   font-size: 12px;
@@ -161,7 +161,7 @@
 }
 
 .white{
-  background-color: aliceblue;
+  background-color: rgb(183, 189, 129);
 }
 
 
@@ -283,6 +283,9 @@
   .missionul .mli {
     line-height: 4 !important; 
     font-size: 12px;
+  }
+  .works{
+    padding: 10px 20px;
   }
 }
 
