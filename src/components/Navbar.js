@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <div className='custom-navbar'>
       {/* Top contact row */}
-      <div className="row none">
+      <div className="row bgtop none">
         <div className="col-md-4 small text-white text-start">
           <i className="fa fa-phone"></i> +92-345-6789234
         </div>
@@ -28,7 +28,7 @@ function Navbar() {
 
       {/* Navbar */}
       <nav className="navbar-container">
-        <div className="logo text-white d-flex align-items-center">
+        <div className="logo text-white ms-4 d-flex align-items-center">
           <img className='wheelcss' src="/steering-wheel.png" alt="wheel" />
           GoDrive
         </div>

@@ -1,10 +1,25 @@
-/* Your existing CSS remains untouched for desktop screens */
 .custom-navbar {
   position: absolute;
   top: 0;
   width: 100%;
   padding: 15px 20px;
   z-index: 2;
+  padding: 0px !important;
+}
+
+.margin{
+  margin-bottom: 0px !important;
+  margin-top: 7px !important;
+}
+.none {
+  margin: 0px !important;
+  padding-bottom: 5px !important;
+  padding-top: 5px !important;
+}
+.bgtop {
+  display: flex;
+  justify-content: space-around;
+  background-color: #222222;
 }
 
 .greencolor {
@@ -22,7 +37,7 @@
 }
 
 .wheelcss {
-  width: 55px;
+  width: 30px;
   margin-right: 10px;
 }
 

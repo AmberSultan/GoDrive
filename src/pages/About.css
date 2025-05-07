@@ -1,0 +1,229 @@
+
+
+.aboutbg {
+  margin-top: 7%;
+  width: 92%;
+  height: auto;
+  display: block;
+  z-index: 0;
+  border-radius: 12px;
+  min-height: 430px;
+  margin-right: 60px !important;
+  margin-left: 60px;
+}
+
+.herosec1 {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  z-index: 1;
+  color: white;
+  text-align: left;
+  padding: 20px;
+}
+
+.looksubtxt {
+  font-weight: 400;
+  font-size: 20px !important;
+}
+
+.custom-breadcrumb {
+  position: absolute; /* Position relative to .about-container */
+  top: 72%; /* Adjust this value to move the breadcrumb higher or lower */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset to truly center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  z-index: 1; /* Ensure breadcrumb is above image and overlay */
+  border: 1px solid rgb(124, 124, 124);
+  border-radius: 12px;
+  background-color: rgb(32, 32, 32);
+}
+
+.custom-breadcrumb .breadcrumb {
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+
+.custom-breadcrumb .breadcrumb-item a {
+  color: rgb(204, 204, 204);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom-breadcrumb .breadcrumb-item a:hover {
+  color: #FFD700;
+}
+
+.custom-breadcrumb .breadcrumb-item.active {
+  color: white;
+  font-weight: 630;
+  cursor: pointer;
+}
+
+.custom-breadcrumb .breadcrumb-item.active:hover {
+  color: #FFD700;
+}
+
+.custom-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  color: white;
+}
+
+.futurecontainer{
+  margin-top: 7%;
+ 
+}
+
+.future{
+  font-size: 44px;
+  font-weight: 650;
+  text-align: left;
+}
+
+.futuredetail{
+  color: rgb(77, 77, 77);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.aboutimg1{
+  max-width: 100%;
+  border-radius: 12px;
+}
+.aboutimg3{
+  background-color: #ffd900e1;
+  color: black;
+  max-width: 100%;
+  border-radius: 12px;
+  padding: 62px 30px;
+  font-size: 30px;
+  font-weight: 670;
+}
+
+.car{
+  border-radius: 12px;
+  max-width: 100%;
+}
+
+
+
+/* ====== Responsive Styles ====== */
+@media (max-width: 786px) {
+  .aboutbg {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10%;
+    min-height: 350px;
+  }
+
+  .herosec1 {
+    top: 25%;
+    left: 5%;
+    padding: 15px;
+  }
+
+  .looksubtxt {
+    font-size: 18px !important;
+  }
+
+  .custom-breadcrumb {
+    top: 75%;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .future {
+    font-size: 36px;
+  }
+
+  .futuredetail {
+    font-size: 16px;
+  }
+
+  .aboutimg3 {
+    padding: 40px 20px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 430px) {
+  .aboutbg {
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 200px;
+    margin-top: 17%;
+    width: 94%;
+    object-fit: cover;
+  }
+
+  .herosec1 {
+    top: 17%;
+    left: 5%;
+    padding: 12px;
+  }
+
+  .looksubtxt {
+    font-size: 16px !important;
+  }
+
+  .custom-breadcrumb {
+    top: 45%;
+    font-size: 13px;
+    border-width: 1px;
+    padding: 0px;
+  }
+
+  .future {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .futuredetail {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .aboutimg3 {
+    padding: 30px 16px;
+    font-size: 22px;
+  }
+
+  .none1{
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .herosec1 {
+    top: 20%;
+    left: 5%;
+    padding: 10px;
+  }
+
+  .looksubtxt {
+    font-size: 14px !important;
+  }
+
+  .custom-breadcrumb {
+    top: 80%;
+    font-size: 12px;
+  }
+
+  .future {
+    font-size: 26px;
+  }
+
+  .futuredetail {
+    font-size: 14px;
+  }
+
+  .aboutimg3 {
+    padding: 20px 12px;
+    font-size: 18px;
+  }
+}
