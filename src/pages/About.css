@@ -200,17 +200,20 @@
 
 @media (max-width: 320px) {
   .herosec1 {
-    top: 20%;
+    top: 15%;
     left: 5%;
     padding: 10px;
   }
-
+.lookingtxt{
+ 
+  font-size: 28px;
+}
   .looksubtxt {
     font-size: 14px !important;
   }
 
   .custom-breadcrumb {
-    top: 80%;
+    top: 43%;
     font-size: 12px;
   }
 
