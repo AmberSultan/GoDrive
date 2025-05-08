@@ -226,7 +226,7 @@ function About() {
         <h2 className="faq2 text-center">Frequently Asked Questions</h2>
 
         {/* FAQ Accordion Section */}
-        <div className="faq-accordion">
+        <div className="faq-accordion " data-aos="fade-up">
           {faqs.map((faq, index) => (
             <div className="faq-item" key={index}>
               <div
@@ -259,7 +259,7 @@ function About() {
       </div>
     </div>
 
-      <hr />
+      <hr className="margin" />
 
       <Footer />
     </div>
