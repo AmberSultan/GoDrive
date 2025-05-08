@@ -219,25 +219,23 @@ function About() {
           </div>
         </div>
       </div>
-
+      <div className="faq-section">
+      <img className="faqbg" src="/faqbg.png" alt="FAQ Background" />
       <div className="container faq">
         <p className="faq1 text-center">Our Support</p>
-        <h2 className="faq2">Frequently Asked Questions</h2>
+        <h2 className="faq2 text-center">Frequently Asked Questions</h2>
 
         {/* FAQ Accordion Section */}
         <div className="faq-accordion">
           {faqs.map((faq, index) => (
             <div className="faq-item" key={index}>
               <div
-                className={`faq-question ${openFaq === index ? "active" : ""}`} // Add active class when open
+                className={`faq-question ${openFaq === index ? 'active' : ''}`}
                 onClick={() => toggleFaq(index)}
               >
                 <span className="faq-number">0{index + 1}</span>
-                <span className="ask">{faq.question}</span>{" "}
-                {/* Removed text-start, relying on custom CSS */}
-                <span className="faq-toggle">
-                  {openFaq === index ? "×" : "+"}
-                </span>
+                <span className="ask">{faq.question}</span>
+                <span className="faq-toggle">{openFaq === index ? '×' : '+'}</span>
               </div>
               {openFaq === index && (
                 <div className="faq-answer">
@@ -246,20 +244,20 @@ function About() {
               )}
             </div>
           ))}
+        </div>
 
-<div className="d-flex mt-5 mb-5 justify-content-center align-items-center gap-5">
-  <Link to="#" className="text-end contact">
-    Contact Us
-    <FontAwesomeIcon icon={faArrowRight} className="arrow" />
-  </Link>
-
-  <Link to="#" className="help">
-    Help Center
-    <FontAwesomeIcon icon={faArrowRight} className="arrow" />
-  </Link>
-</div>
+        <div className="d-flex mt-5 mb-5 justify-content-center align-items-center gap-5">
+          <Link to="#" className="contact">
+            Contact Us
+            <FontAwesomeIcon icon={faArrowRight} className="arrow" />
+          </Link>
+          <Link to="#" className="help">
+            Help Center
+            <FontAwesomeIcon icon={faArrowRight} className="arrow" />
+          </Link>
         </div>
       </div>
+    </div>
 
       <hr />
 
