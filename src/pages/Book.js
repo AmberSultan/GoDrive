@@ -6,7 +6,7 @@ import './Book.css'
 import { Link } from "react-router-dom";
 
 import Navbar from '../components/Navbar'
-
+import CarList from "../components/CarList";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css"; 
 
@@ -217,6 +217,16 @@ function Book() {
           </div>
         </div>
       </div>
+
+      <div className="container bookstart" data-aos="fade-up">
+      <h2 className="premium text-start" >Our Vehicle Fleet</h2>
+      <p className="unveil text-start">Turning dreams into reality with versatile vehicles.</p>
+      </div>
+
+      <hr/>
+
+<CarList/>
+
     </div>
   )
 }

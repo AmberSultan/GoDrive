@@ -1,0 +1,60 @@
+.left{
+    margin-top: 10% !important;
+}
+
+.filter-item{
+    border: 1px solid rgb(116, 116, 116);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 8%;
+}
+
+.filhead{
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 9% !important;
+    font-size: 17px;
+}
+
+/* CarTypesList.css */
+.car-types-container {
+    font-family: Arial, sans-serif;
+    max-width: 300px;
+    margin: 20px;
+  }
+  
+  .car-types-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .car-type-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+    /* padding: 8px 0; */
+  }
+  
+  .car-type-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .car-type-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-color: transparent !important;
+  }
+  
+  .car-type-checkbox label {
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .car-type-count {
+    color: #666;
+  }
