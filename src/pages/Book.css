@@ -1,0 +1,37 @@
+.herosec2 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+
+  .findline {
+    background-color: #64868b;
+    width: fit-content;
+    color: black;
+    font-weight: 640 !important;
+    padding: 10px 25px;
+    border-radius: 12px;
+    margin: 0 auto; /* THIS centers it */
+  }
+
+  .booksub{
+    margin-top: -10px
+  }
+
+  .halfhalf1 {
+    position: absolute;
+    top: 60%;
+    left: 6.5%;
+    padding: 30px 30px !important;
+    background-color: #191919;
+    border-radius: 12px;
+    border: 1px solid rgb(44, 44, 44);
+    /* z-index: 1 !important; */
+  }
+  

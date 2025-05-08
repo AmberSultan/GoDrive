@@ -251,7 +251,7 @@ function About() {
             Contact Us
             <FontAwesomeIcon icon={faArrowRight} className="arrow" />
           </Link>
-          <Link to="#" className="help">
+          <Link to="#" className="helpcenter">
             Help Center
             <FontAwesomeIcon icon={faArrowRight} className="arrow" />
           </Link>

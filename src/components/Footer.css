@@ -16,7 +16,7 @@
   .footer-section {
     flex: 1;
     min-width: 200px;
-    margin: 20px;
+    margin: 20px 20px 0px;
   }
   
   .company-info {
@@ -83,7 +83,7 @@
     text-align: left;
     padding-top: 20px;
   
-    margin-top: 20px;
+    /* margin-top: 20px; */
     font-size: 12px;
     color: #ebebeb;
     font-weight: 500;

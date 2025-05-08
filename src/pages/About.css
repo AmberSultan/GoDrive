@@ -280,7 +280,7 @@
 
 /* Links Section */
 .contact,
-.help {
+.helpcenter {
   color: #fff;
   font-size: 18px;
   text-decoration: none;
@@ -291,7 +291,7 @@
 }
 
 .contact:hover,
-.help:hover {
+.helpcenter:hover {
   color: #617e83;
 }
 
@@ -316,7 +316,7 @@
   }
 }
 
-.help{
+.helpcenter{
   color: white;
   &:hover{
     color: #c7c7c7;
@@ -416,7 +416,7 @@
 
   }
   
-  .help{
+  .helpcenter{
     color: white;
     font-size: 12px !important;
   }
@@ -523,7 +523,7 @@
   .contact{
     font-size: 15px;
   }
-  .help{
+  .helpcenter{
 font-size: 14px;
   }
 

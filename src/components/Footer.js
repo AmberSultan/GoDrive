@@ -83,10 +83,10 @@ function Footer() {
           </ul>
         </div>
       </div>
-
+      <hr/>
       {/* Copyright */}
       <div className="container footer-bottom">
-      <hr/>
+     
         <p className='text-center'>© 2025 godrive Inc. All rights reserved.</p>
         <p className='text-center'>Made by <span className='greencolor'>Amber Sultan</span> </p>
       </div>
