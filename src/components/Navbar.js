@@ -41,11 +41,11 @@ function Navbar() {
         <ul className={`nav-links ${isOpen ? 'show' : ''}`}>
           <li className='navli'><Link className='navlink' to="/">Home</Link></li>
           <li className='navli'><Link className='navlink' to="/about">About Us</Link></li>
-          <li className='navli'><Link className='navlink' to="/services">Our Services</Link></li>
+          {/* <li className='navli'><Link className='navlink' to="/services">Our Services</Link></li> */}
           <li className='navli'><Link className='navlink' to="/book-a-car">Book Now</Link></li>
-          <li className='navli'><Link className='navlink' to="/loan-calculator">Loan Calculator</Link></li>
+          {/* <li className='navli'><Link className='navlink' to="/loan-calculator">Loan Calculator</Link></li>
           <li className='navli'><Link className='navlink' to="/terms">Term</Link></li>
-          <li className='navli'><Link className='navlink' to="/contact">Contact</Link></li>
+          <li className='navli'><Link className='navlink' to="/contact">Contact</Link></li> */}
         </ul>
       </nav>
 
