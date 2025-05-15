@@ -14,6 +14,7 @@
     background-color: #64868b;
     width: fit-content;
     color: black;
+    font-size: 14px;
     font-weight: 640 !important;
     padding: 10px 25px;
     border-radius: 12px;
@@ -26,9 +27,9 @@
 
   .halfhalf1 {
     position: absolute;
-    top: 60%;
-    left: 6.5%;
-    padding: 30px 30px !important;
+    top: 63%;
+    left: 8.5%;
+    padding: 20px 30px !important;
     background-color: #191919;
     border-radius: 12px;
     border: 1px solid rgb(44, 44, 44);

@@ -223,7 +223,7 @@ function Book() {
       <p className="unveil text-start">Turning dreams into reality with versatile vehicles.</p>
       </div>
 
-      <hr/>
+      {/* <hr/> */}
 
 <CarList/>
 
