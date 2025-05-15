@@ -58,14 +58,16 @@
 /* Halfhalf Section */
 .halfhalf {
   position: absolute;
-  top: 114%;
-  left: 8%;
+  top: 133%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 30px 30px !important;
   background-color: #191919;
   border-radius: 12px;
   border: 1px solid rgb(44, 44, 44);
   /* z-index: 1 !important; */
 }
+
 
 .allcars {
   text-align: left;
