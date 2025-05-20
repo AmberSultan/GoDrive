@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
+import { Link } from "react-router-dom";
 import "./CarList.css";
 
 import carData from "./carData";
@@ -202,7 +203,9 @@ function CarList() {
                       <span className="fw-bold text-light">{car.price}</span> /day
                     </div>
                     <div className="miles">
-                      <button className="booknow">Book Now</button>
+            
+                        <Link className="booknow" to='/car-detail'>
+                        Book Now</Link>
                     </div>
                   </div>
                 </div>

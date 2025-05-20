@@ -2,20 +2,21 @@
   position: absolute;
   top: 0;
   width: 100%;
-  padding: 15px 20px;
-  z-index: 2;
   padding: 0px !important;
+  z-index: 2;
 }
 
-.margin{
+.margin {
   margin-bottom: 0px !important;
   margin-top: 7px !important;
 }
+
 .none {
   margin: 0px !important;
   padding-bottom: 5px !important;
   padding-top: 5px !important;
 }
+
 .bgtop {
   display: flex;
   justify-content: space-around;
@@ -98,13 +99,14 @@
   color: #FFD700;
 }
 
+/* Hide top row on smaller screens */
 @media screen and (max-width: 768px) {
   .none {
     display: none !important;
   }
 }
 
-/* ✅ Mobile Responsive Styles for 720px and below */
+/* ✅ Tablet and Mobile Styles (up to 720px) */
 @media screen and (max-width: 720px) {
   .custom-navbar {
     padding: 12px 15px;
@@ -143,6 +145,7 @@
   }
 }
 
+/* ✅ Small Phone Screens (up to 425px) */
 @media screen and (max-width: 425px) {
   .custom-navbar {
     padding: 7px 15px;
@@ -180,8 +183,46 @@
     font-size: 16px;
   }
 
-  .margin{
+  .margin {
     margin-bottom: 0px !important;
     margin-top: 7px !important;
+  }
+}
+
+/* ✅ Desktop & Laptop Screens (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+  .hamburger {
+    display: none !important;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    background: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .navli {
+    margin: 0 20px;
+  }
+
+  .navlink {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navlink:hover {
+    color: #FFD700;
   }
 }
