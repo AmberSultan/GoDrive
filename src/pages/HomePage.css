@@ -303,15 +303,16 @@
 
   /* Form Section Adjustments */
   .halfhalf {
-    position: relative;
+  position: absolute;
     top: auto; /* Remove absolute positioning */
-    left: auto;
-    margin-top: 20px; /* Ensure it flows naturally */
-    padding: 20px !important;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 30px !important;
+  background-color: #191919;
+  border-radius: 12px;
+  border: 1px solid rgb(44, 44, 44);
+  /* z-index: 1 !important; */
+}
 
   .borderhalf {
     padding: 15px 0;
@@ -390,17 +391,14 @@
   }
 
   /* Form Section Adjustments */
-  .halfhalf {
-    position: relative;
-    top: auto; /* Remove absolute positioning */
-    left: auto;
-    margin-top: 20px; /* Ensure it flows naturally */
-    padding: 20px !important;
-    width: 90% !important;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px !important;
-  }
+.halfhalf {
+  position: static;
+  transform: translate(0%, 0%);
+  padding: 30px 30px !important;
+  background-color: #191919;
+  border-radius: 12px;
+  border: 1px solid rgb(44, 44, 44);
+}
 
   .borderhalf {
     padding: 15px 0;

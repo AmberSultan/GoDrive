@@ -5,7 +5,27 @@ import './Homepage3.css';
 
 function Homepage3() {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // animation duration in ms
+    AOS.init({
+      duration: 1000,
+      offset: 120, // tweak if needed
+      once: true,  // animation only once while scrolling down
+    });
+
+    const refreshAOS = () => {
+      AOS.refresh();
+    };
+
+    // Refresh on resize
+    window.addEventListener('resize', refreshAOS);
+
+    // Refresh after images load
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach(img => img.addEventListener('load', refreshAOS));
+
+    return () => {
+      window.removeEventListener('resize', refreshAOS);
+      imgs.forEach(img => img.removeEventListener('load', refreshAOS));
+    };
   }, []);
 
   return (
@@ -14,7 +34,7 @@ function Homepage3() {
         {/* Left Image/Video */}
         <div
           className="col-md-6 mb-4 mb-md-0 position-relative"
-          data-aos="fade-right" // 👈 animation
+          data-aos="fade-right" // animation
         >
           <img
             src="/carrent.jpg"
@@ -24,8 +44,8 @@ function Homepage3() {
         </div>
 
         {/* Right Content */}
-        <div className="col-md-6 " data-aos="fade-left"> {/* 👈 animation */}
-          <p className='carrental text-center magintop'>Best Car Rental System</p>
+        <div className="col-md-6" data-aos="fade-left"> {/* animation */}
+          <p className="carrental text-center magintop">Best Car Rental System</p>
           <p className="recieve text-start">Receive a Competitive Offer Sell Your Car to Us Today.</p>
           <p className="text-secondary mb-4 text-start">
             We are committed to delivering exceptional service, competitive pricing,
