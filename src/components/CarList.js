@@ -58,12 +58,6 @@ function CarList() {
     setFilterPrice({ min: 0, max: parseInt(e.target.value) });
   };
 
-  // const filteredCars = cars.filter(
-  //   (car) =>
-  //     car.price >= filterPrice.min &&
-  //     car.price <= filterPrice.max &&
-  //     (carType === "All" || car.type === carType)
-  // );
   const handleClearFilters = () => {
     setFilterPrice({ min: 0, max: 50000 });
     setSelectedTypes([]);

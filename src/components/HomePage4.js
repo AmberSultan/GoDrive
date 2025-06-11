@@ -55,7 +55,7 @@ function HomePage4() {
           <FontAwesomeIcon icon={step.icon} />
         </div>
         <h3 >{step.title}</h3>
-        <p className='text-start'>{step.description}</p>
+        <p>{step.description}</p>
       </div>
     ))}
   </div>
