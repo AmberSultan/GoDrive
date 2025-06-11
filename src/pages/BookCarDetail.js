@@ -1,14 +1,104 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Bookcardetail.css";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDoorOpen, faMap,faGasPump, faChair, faGears, faDroplet, faGaugeSimpleHigh, faCircleCheck, faPhone, faEnvelope, faMessage, faFax} from "@fortawesome/free-solid-svg-icons";
-
-// import { Link } from "react-router-dom";
+import {
+  faDoorOpen,
+  faMap,
+  faGasPump,
+  faChair,
+  faGears,
+  faDroplet,
+  faGaugeSimpleHigh,
+  faCircleCheck,
+  faPhone,
+  faEnvelope,
+  faMessage,
+  faFax,
+} from "@fortawesome/free-solid-svg-icons";
 
 import Navbar from "../components/Navbar";
 
 function BookCarDetail() {
+
+  const [pickupDate, setPickupDate] = useState("2025-06-10");
+  const [dropoffDate, setDropoffDate] = useState("2025-06-10");
+  const [extras, setExtras] = useState({
+    gps: false,
+    childSeat: false,
+    additionalDriver: false,
+    insurance: false,
+  });
+  const [subtotal, setSubtotal] = useState(11300); 
+  const [total, setTotal] = useState(11300); 
+  const [error, setError] = useState("");
+
+
+  const extraPrices = {
+    gps: 1500,
+    childSeat: 1800,
+    additionalDriver: 3000,
+    insurance: 5000,
+  };
+
+
+  const calculateDays = () => {
+    const pickup = new Date(pickupDate);
+    const dropoff = new Date(dropoffDate);
+    const diffTime = dropoff - pickup;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays >= 1 ? diffDays : 1;
+  };
+
+
+  useEffect(() => {
+    const days = calculateDays();
+    let extraTotal = 0;
+
+
+    for (const [key, value] of Object.entries(extras)) {
+      if (value) {
+        extraTotal += extraPrices[key];
+      }
+    }
+
+
+    const newTotal = subtotal * days + extraTotal;
+    setTotal(newTotal);
+  }, [pickupDate, dropoffDate, extras]);
+
+  const handleExtraChange = (e) => {
+    const { id, checked } = e.target;
+    setExtras((prev) => ({
+      ...prev,
+      [id]: checked,
+    }));
+  };
+
+ 
+  const handleBooking = () => {
+    const days = calculateDays();
+    if (pickupDate === "" || dropoffDate === "") {
+      setError("Please select both pickup and drop-off dates.");
+      return;
+    }
+    if (new Date(pickupDate) > new Date(dropoffDate)) {
+      setError("Drop-off date must be after pickup date.");
+      return;
+    }
+
+ 
+    const bookingDetails = {
+      pickupDate,
+      dropoffDate,
+      days,
+      extras,
+      total,
+    };
+    console.log("Booking submitted:", bookingDetails);
+    // alert("Booking submitted successfully! Check console for details.");
+    setError("");
+  };
+
   useEffect(() => {
     const thumbs = document.querySelectorAll(".thumb-img");
 
@@ -18,7 +108,15 @@ function BookCarDetail() {
         thumb.classList.add("active");
       });
     });
+
+   
+    return () => {
+      thumbs.forEach((thumb) => {
+        thumb.removeEventListener("click", () => {});
+      });
+    };
   }, []);
+
   return (
     <>
       <Navbar />
@@ -156,7 +254,7 @@ function BookCarDetail() {
             </div>
             <div>
               <span className="loc">
-              <FontAwesomeIcon icon={faMap} />
+                <FontAwesomeIcon icon={faMap} />
               </span>
               Fleet Code: LVA-4125
             </div>
@@ -165,16 +263,23 @@ function BookCarDetail() {
             <div className="col-md-8">
               <div className="overview1">
                 <div className="row justify-content-center gap-3">
-                  <div className="col-md-3 clrbg"><FontAwesomeIcon className="text-dark" icon={faGaugeSimpleHigh} /> 56,500</div>
-                  <div className="col-md-3 clrbg"><FontAwesomeIcon className="text-dark" icon={faGasPump} />   Diesel</div>
-                  <div className="col-md-3 clrbg"><FontAwesomeIcon className="text-dark" icon={faGears} />   Automatic</div>
                   <div className="col-md-3 clrbg">
-                    <FontAwesomeIcon className="text-dark" icon={faChair} />  7 seats</div>
-                  <div className="col-md-3 clrbg">
-                <FontAwesomeIcon className="text-dark" icon={faDoorOpen} />   4 Doors
+                    <FontAwesomeIcon className="text-dark" icon={faGaugeSimpleHigh} /> 56,500
                   </div>
                   <div className="col-md-3 clrbg">
-                  <FontAwesomeIcon className="text-dark" icon={faDroplet} />  2.5L
+                    <FontAwesomeIcon className="text-dark" icon={faGasPump} /> Diesel
+                  </div>
+                  <div className="col-md-3 clrbg">
+                    <FontAwesomeIcon className="text-dark" icon={faGears} /> Automatic
+                  </div>
+                  <div className="col-md-3 clrbg">
+                    <FontAwesomeIcon className="text-dark" icon={faChair} /> 7 seats
+                  </div>
+                  <div className="col-md-3 clrbg">
+                    <FontAwesomeIcon className="text-dark" icon={faDoorOpen} /> 4 Doors
+                  </div>
+                  <div className="col-md-3 clrbg">
+                    <FontAwesomeIcon className="text-dark" icon={faDroplet} /> 2.5L
                   </div>
                 </div>
               </div>
@@ -199,121 +304,191 @@ function BookCarDetail() {
                 </p>
               </div>
               <div className="overview">
-  <h5 className="over text-start">Included in the price</h5>
-  <div className="row">
-    <div className="col-md-6">
-      <p className="points"><FontAwesomeIcon className="text-warning" icon={faCircleCheck}/> Free cancellation up to 48 hours before pick-up</p>
-      <p className="points"><FontAwesomeIcon className="text-warning" icon={faCircleCheck}/> Theft protection with Rs. 200,000 deductible</p>
-    </div>
-    <div className="col-md-6">
-      <p className="points"><FontAwesomeIcon className="text-warning" icon={faCircleCheck}/> Collision cover (Rs. 150,000 deductible)</p>
-      <p className="points"><FontAwesomeIcon className="text-warning" icon={faCircleCheck}/> Unlimited</p>
-    </div>
-  </div>
-</div>
+                <h5 className="over text-start">Included in the price</h5>
+                <div className="row">
+                  <div className="col-md-6">
+                    <p className="points">
+                      <FontAwesomeIcon className="text-warning" icon={faCircleCheck} /> Free
+                      cancellation up to 48 hours before pick-up
+                    </p>
+                    <p className="points">
+                      <FontAwesomeIcon className="text-warning" icon={faCircleCheck} /> Theft
+                      protection with Rs. 200,000 deductible
+                    </p>
+                  </div>
+                  <div className="col-md-6">
+                    <p className="points">
+                      <FontAwesomeIcon className="text-warning" icon={faCircleCheck} /> Collision
+                      cover (Rs. 150,000 deductible)
+                    </p>
+                    <p className="points">
+                      <FontAwesomeIcon className="text-warning" icon={faCircleCheck} /> Unlimited
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-<div className="overview">
-  <h5 className="over text-start">Questions Answers</h5>
-
-
-</div>
-
+              <div className="overview">
+                <h5 className="over text-start">Questions Answers</h5>
+              </div>
             </div>
             <div className="col-md-4">
-  <div className="overview">
-    <h5 className="over text-start rent">Rent This Vehicle</h5>
+              <div className="overview">
+                <h5 className="over text-start rent">Rent This Vehicle</h5>
 
-    <div className="mb-3 text-start">
-      <label className="form-label newcss ">Pick-Up</label>
-      <input type="date" className="form-control nocolor" defaultValue="2025-06-10" />
-    </div>
+                {error && <div className="alert alert-danger">{error}</div>}
 
-    <div className="mb-3 text-start">
-      <label className="form-label newcss">Drop-Off</label>
-      <input type="date" className="form-control nocolor" defaultValue="2025-06-10" />
-    </div>
+                <div className="mb-3 text-start">
+                  <label className="form-label newcss">Pick-Up</label>
+                  <input
+                    type="date"
+                    className="form-control nocolor"
+                    value={pickupDate}
+                    onChange={(e) => setPickupDate(e.target.value)}
+                    min={new Date().toISOString().split("T")[0]} // Prevent past dates
+                  />
+                </div>
 
-    <hr className="border-secondary" />
+                <div className="mb-3 text-start">
+                  <label className="form-label newcss">Drop-Off</label>
+                  <input
+                    type="date"
+                    className="form-control nocolor"
+                    value={dropoffDate}
+                    onChange={(e) => setDropoffDate(e.target.value)}
+                    min={pickupDate} // Ensure drop-off is after pickup
+                  />
+                </div>
 
-    <h6 className="fw-bold text-start">Add Extra:</h6>
+                <hr className="border-secondary" />
 
-  <div className="form-check">
-    <input className="form-check-input nocolor" type="checkbox" id="gps" />
-    <label className="form-check-label d-flex justify-content-between" htmlFor="gps">
-      <span className="newcss" >GPS Navigation System</span>
-      <span className="newcss">Rs 7,000</span>
-    </label>
-  </div>
+                <h6 className="fw-bold text-start">Add Extra:</h6>
 
-  <div className="form-check">
-    <input className="form-check-input nocolor" type="checkbox" id="child" />
-    <label className="form-check-label d-flex justify-content-between" htmlFor="child">
-      <span className="newcss">Child Seat</span>
-      <span className="newcss">Rs 9,000</span>
-    </label>
-  </div>
+                <div className="form-check">
+                  <input
+                    className="form-check-input nocolor"
+                    type="checkbox"
+                    id="gps"
+                    checked={extras.gps}
+                    onChange={handleExtraChange}
+                  />
+                  <label
+                    className="form-check-label d-flex justify-content-between"
+                    htmlFor="gps"
+                  >
+                    <span className="newcss">GPS Navigation System</span>
+                    <span className="newcss">Rs {extraPrices.gps.toLocaleString()}</span>
+                  </label>
+                </div>
 
-  <div className="form-check">
-    <input className="form-check-input nocolor" type="checkbox" id="driver" />
-    <label className="form-check-label d-flex justify-content-between" htmlFor="driver">
-      <span className="newcss">Additional Driver</span>
-      <span className="newcss">Rs 7,000</span>
-    </label>
-  </div>
+                <div className="form-check">
+                  <input
+                    className="form-check-input nocolor"
+                    type="checkbox"
+                    id="childSeat"
+                    checked={extras.childSeat}
+                    onChange={handleExtraChange}
+                  />
+                  <label
+                    className="form-check-label d-flex justify-content-between"
+                    htmlFor="childSeat"
+                  >
+                    <span className="newcss">Child Seat</span>
+                    <span className="newcss">Rs {extraPrices.childSeat.toLocaleString()}</span>
+                  </label>
+                </div>
 
-  <div className="form-check mb-3">
-    <input className="form-check-input nocolor" type="checkbox" id="insurance" />
-    <label className="form-check-label d-flex justify-content-between" htmlFor="insurance">
-      <span className="newcss">Insurance Coverage</span>
-      <span className="newcss">Rs 14,500</span>
-    </label>
-  </div>
+                <div className="form-check">
+                  <input
+                    className="form-check-input nocolor"
+                    type="checkbox"
+                    id="additionalDriver"
+                    checked={extras.additionalDriver}
+                    onChange={handleExtraChange}
+                  />
+                  <label
+                    className="form-check-label d-flex justify-content-between"
+                    htmlFor="additionalDriver"
+                  >
+                    <span className="newcss">Additional Driver</span>
+                    <span className="newcss">Rs {extraPrices.additionalDriver.toLocaleString()}</span>
+                  </label>
+                </div>
 
-  <hr className="border-secondary" />
+                <div className="form-check mb-3">
+                  <input
+                    className="form-check-input nocolor"
+                    type="checkbox"
+                    id="insurance"
+                    checked={extras.insurance}
+                    onChange={handleExtraChange}
+                  />
+                  <label
+                    className="form-check-label d-flex justify-content-between"
+                    htmlFor="insurance"
+                  >
+                    <span className="newcss">Insurance Coverage</span>
+                    <span className="newcss">Rs {extraPrices.insurance.toLocaleString()}</span>
+                  </label>
+                </div>
 
-  <div className="d-flex justify-content-between">
-    <p className="mb-1">Subtotal</p>
-    <p className="mb-1">Rs 34,500</p>
-  </div>
-  <div className="d-flex justify-content-between">
-    <p className="mb-1">Sale discount</p>
-    <p className="mb-1">Rs 0</p>
-  </div>
-  <div className="d-flex justify-content-between fw-bold">
-    <p className="mb-3">Total Payable</p>
-    <p className="mb-3">Rs 34,500</p>
-  </div>
+                <hr className="border-secondary" />
 
-    <button className="btn fw-bold btn-warning w-100 mb-2">
-      Book Now <span className=" fw-semibold ms-2">→</span>
-    </button>
-    <div className="text-center text-secondary small">🛈 Need some help?</div>
-  </div>
+                <div className="d-flex justify-content-between">
+                  <p className="mb-1">Subtotal</p>
+                  <p className="mb-1">Rs {(subtotal * calculateDays()).toLocaleString()}</p>
+                </div>
+                <div className="d-flex justify-content-between">
+                  <p className="mb-1">Sale discount</p>
+                  <p className="mb-1">Rs 0</p>
+                </div>
+                <div className="d-flex justify-content-between fw-bold">
+                  <p className="mb-3">Total Payable</p>
+                  <p className="mb-3">Rs {total.toLocaleString()}</p>
+                </div>
 
-  <div className="overview text-start">
-    <h5 className="over text-start rent">Listed by</h5>
+                <button
+                  className="btn fw-bold btn-warning w-100 mb-2"
+                  onClick={handleBooking}
+                >
+                  Book Now <span className="fw-semibold ms-2">→</span>
+                </button>
+                <div className="text-center text-secondary small">
+                  🛈 Need some help?
+                </div>
+              </div>
 
-    <div className="d-flex">
-      <div><img src="/dealerpp.png" alt="" /></div>
-      <div className="ms-3">
-        <p className="fw-bold mb-0">Ahmed Ali</p>
-    <p className="text-secondary">Lahore, Pakistan</p>
-      </div>
-    </div>
+              <div className="overview text-start">
+                <h5 className="over text-start rent">Listed by</h5>
 
-   
-    
+                <div className="d-flex">
+                  <div>
+                    <img src="/dealerpp.png" alt="" />
+                  </div>
+                  <div className="ms-3">
+                    <p className="fw-bold mb-0">Ahmed Ali</p>
+                    <p className="text-secondary">Lahore, Pakistan</p>
+                  </div>
+                </div>
 
-    <hr className="border-secondary" />
+                <hr className="border-secondary" />
 
-    <p><FontAwesomeIcon icon={faPhone} className="newcolor" /> Mobile: 1-22-333-4444</p>
-    <p><FontAwesomeIcon icon={faEnvelope} className="newcolor" /> Email: alivendor@gmail.com</p>
-    <p><FontAwesomeIcon icon={faMessage} className="newcolor" /> WhatsApp: 1-22-333-444</p>
-    <p><FontAwesomeIcon icon={faFax} className="newcolor" /> Fax : 1-22-333-4444</p>
-
-  </div>
-</div>
-
+                <p>
+                  <FontAwesomeIcon icon={faPhone} className="newcolor" /> Mobile: 1-22-333-4444
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faEnvelope} className="newcolor" /> Email:
+                  alivendor@gmail.com
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faMessage} className="newcolor" /> WhatsApp:
+                  1-22-333-444
+                </p>
+                <p>
+                  <FontAwesomeIcon icon={faFax} className="newcolor" /> Fax: 1-22-333-4444
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
