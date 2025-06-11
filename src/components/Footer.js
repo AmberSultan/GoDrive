@@ -3,7 +3,7 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer bg-black">
       <div className="footer-container text-start">
         {/* Company Info Section */}
         <div className="footer-section company-info">

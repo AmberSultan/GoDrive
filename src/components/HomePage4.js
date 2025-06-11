@@ -83,7 +83,7 @@ function HomePage4() {
                     <div className="rent-form-group text-start">
                       <label htmlFor="carType">Car Type</label>
                       <select id="carType" className="rent-input" required>
-                        <option selected disabled>Choose a car</option>
+                        {/* <option selected disabled>Choose a car</option> */}
                         <option value="economy">Economy</option>
                         <option value="standard">Standard</option>
                         <option value="suv">SUV</option>

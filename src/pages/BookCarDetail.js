@@ -14,9 +14,11 @@ import {
   faEnvelope,
   faMessage,
   faFax,
+  faCircleQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer"
 
 function BookCarDetail() {
 
@@ -329,7 +331,23 @@ function BookCarDetail() {
               </div>
 
               <div className="overview">
-                <h5 className="over text-start">Questions Answers</h5>
+                <h5 className="over text-start mb-4">Questions Answers</h5>
+
+                <div className="overview bg-new">
+                  <p className="text-start fw-medium fontqsize "><FontAwesomeIcon className="text-secondary" icon={faCircleQuestion} />  What happens if the drop-off date is the same as the pick-up date?</p>
+                  <p className="text-start fontqsize  ">If both dates are the same, the system counts it as a 1-day rental. Even for a short rental on the same day, the full daily charge applies.</p>
+                </div>
+
+                <div className="overview ">
+                  <p className="text-start fw-medium fontqsize "><FontAwesomeIcon className="text-secondary" icon={faCircleQuestion} />  Are the extra services charged per day or once per rental?</p>
+                  <p className="text-start fontqsize  ">According to current setup the extras like GPS or insurance are one-time charges per rental.</p>
+                </div>
+
+                <div className="overview bg-new">
+                  <p className="text-start fw-medium fontqsize "><FontAwesomeIcon className="text-secondary" icon={faCircleQuestion} />  What documents are required to rent a vehicle?</p>
+                  <p className="text-start fontqsize  ">You typically need a valid CNIC (National ID) and a driving license. Foreign nationals must provide a passport and international driving permit.</p>
+                </div>
+
               </div>
             </div>
             <div className="col-md-4">
@@ -492,6 +510,10 @@ function BookCarDetail() {
           </div>
         </div>
       </div>
+
+
+    <Footer/>
+
     </>
   );
 }
